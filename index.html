@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
     background: var(--bg);
     color: var(--ink);
     line-height: 1.7;
@@ -24,7 +24,24 @@
     max-width: 640px;
     margin: 0 auto;
     padding: 64px 24px 96px;
+    position: relative;
   }
+  .lang-toggle {
+    position: absolute;
+    top: 28px;
+    right: 24px;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  .lang-toggle a {
+    color: var(--muted);
+    text-decoration: none;
+    margin: 0 4px;
+    transition: color 0.15s;
+  }
+  .lang-toggle a:hover { color: var(--accent); }
+  .lang-toggle a.active { color: var(--accent); font-weight: 600; }
   header {
     margin-bottom: 48px;
   }
@@ -125,66 +142,131 @@
     color: var(--muted);
     text-align: center;
   }
+  /* Language switching */
+  html[data-lang="en"] .lang-zh { display: none; }
+  html[data-lang="zh"] .lang-en { display: none; }
 </style>
 </head>
 <body>
   <div class="wrap">
+
+    <div class="lang-toggle">
+      <a href="#" data-lang-set="en">EN</a>
+      ·
+      <a href="#" data-lang-set="zh">中文</a>
+    </div>
+
     <header>
       <div class="logo">VoiceCue</div>
-      <h1>Talking-head videos, naturally.</h1>
-      <p class="tagline">Listen to your script in headphones. Echo it to the camera. Only your voice ends up in the video.</p>
+
+      <div class="lang-en">
+        <h1>Talking-head videos, naturally.</h1>
+        <p class="tagline">Listen to your script in headphones. Echo it to the camera. Only your voice ends up in the video.</p>
+      </div>
+      <div class="lang-zh">
+        <h1>录口播，自然得像聊天。</h1>
+        <p class="tagline">戴上耳机听稿子，对着镜头复述一遍。视频里只留下你自己的声音。</p>
+      </div>
+
       <nav>
-        <a href="#privacy">Privacy</a>
-        <a href="#support">Support</a>
-        <a href="#about">About</a>
+        <a href="#privacy"><span class="lang-en">Privacy</span><span class="lang-zh">隐私</span></a>
+        <a href="#support"><span class="lang-en">Support</span><span class="lang-zh">帮助</span></a>
+        <a href="#about"><span class="lang-en">About</span><span class="lang-zh">关于</span></a>
       </nav>
     </header>
 
     <section id="privacy">
-      <h2>Privacy Policy</h2>
-      <p class="updated">Last updated: April 24, 2026</p>
 
-      <p>VoiceCue is designed with a simple principle: <strong>what you record is yours alone.</strong> The app does not collect, transmit, or share any personal information.</p>
+      <div class="lang-en">
+        <h2>Privacy Policy</h2>
+        <p class="updated">Last updated: April 24, 2026</p>
 
-      <h3>What we collect</h3>
-      <p><strong>Nothing.</strong> VoiceCue does not collect, store, or transmit any personal data, usage data, analytics, or telemetry.</p>
+        <p>VoiceCue is designed with a simple principle: <strong>what you record is yours alone.</strong> The app does not collect, transmit, or share any personal information.</p>
 
-      <h3>Local data</h3>
-      <p>The app stores the following on your device only, never leaving it:</p>
-      <ul>
-        <li>Your scripts and the speech the app generates from them</li>
-        <li>Your imported and recorded reference audio</li>
-        <li>Your video recordings, before you export them to Photos</li>
-        <li>Your preferences (playback speed, aspect ratio, voice selection)</li>
-      </ul>
-      <p>These are saved inside the app's sandbox and removed when you uninstall VoiceCue.</p>
+        <h3>What we collect</h3>
+        <p><strong>Nothing.</strong> VoiceCue does not collect, store, or transmit any personal data, usage data, analytics, or telemetry.</p>
 
-      <h3>Device permissions</h3>
-      <p>VoiceCue asks for the following iOS permissions, purely for on-device work:</p>
-      <ul>
-        <li><strong>Camera</strong> — to record you through the front-facing lens. Saved locally, never uploaded.</li>
-        <li><strong>Microphone</strong> — to record your voice into the video, and to record reference audio. Saved locally, never uploaded.</li>
-        <li><strong>Photo Library (Add Only)</strong> — to save your finished videos into the Photos app. VoiceCue cannot read photos or videos that are already in your library.</li>
-      </ul>
+        <h3>Local data</h3>
+        <p>The app stores the following on your device only, never leaving it:</p>
+        <ul>
+          <li>Your scripts and the speech the app generates from them</li>
+          <li>Your imported and recorded reference audio</li>
+          <li>Your video recordings, before you export them to Photos</li>
+          <li>Your preferences (playback speed, aspect ratio, voice selection)</li>
+        </ul>
+        <p>These are saved inside the app's sandbox and removed when you uninstall VoiceCue.</p>
 
-      <h3>Network access</h3>
-      <p>VoiceCue works fully offline. Text-to-speech runs on your iPhone via Apple's <code>AVSpeechSynthesizer</code>. No audio, video, or text is sent to any server.</p>
+        <h3>Device permissions</h3>
+        <p>VoiceCue asks for the following iOS permissions, purely for on-device work:</p>
+        <ul>
+          <li><strong>Camera</strong> — to record you through the front-facing lens. Saved locally, never uploaded.</li>
+          <li><strong>Microphone</strong> — to record your voice into the video, and to record reference audio. Saved locally, never uploaded.</li>
+          <li><strong>Photo Library (Add Only)</strong> — to save your finished videos into the Photos app. VoiceCue cannot read photos or videos that are already in your library.</li>
+        </ul>
 
-      <h3>Third-party services</h3>
-      <p>None. VoiceCue does not use any third-party analytics, advertising, crash reporting, or tracking services.</p>
+        <h3>Network access</h3>
+        <p>VoiceCue works fully offline. Text-to-speech runs on your iPhone via Apple's <code>AVSpeechSynthesizer</code>. No audio, video, or text is sent to any server.</p>
 
-      <h3>Children</h3>
-      <p>VoiceCue is safe for all ages. Because no data is collected, no special provisions are needed for users under 13.</p>
+        <h3>Third-party services</h3>
+        <p>None. VoiceCue does not use any third-party analytics, advertising, crash reporting, or tracking services.</p>
 
-      <h3>Changes to this policy</h3>
-      <p>If this policy ever changes, the updated date at the top of this page will reflect it.</p>
+        <h3>Children</h3>
+        <p>VoiceCue is safe for all ages. Because no data is collected, no special provisions are needed for users under 13.</p>
 
-      <h3>Contact</h3>
-      <p>Questions? Reach out via any of these channels — I respond personally.</p>
+        <h3>Changes to this policy</h3>
+        <p>If this policy ever changes, the updated date at the top of this page will reflect it.</p>
+
+        <h3>Contact</h3>
+        <p>Questions? Reach out via any of these channels — I respond personally.</p>
+      </div>
+
+      <div class="lang-zh">
+        <h2>隐私政策</h2>
+        <p class="updated">最后更新：2026 年 4 月 24 日</p>
+
+        <p>VoiceCue 的原则只有一条：<strong>你录下的东西只属于你。</strong>应用不收集、不上传、不分享任何个人信息。</p>
+
+        <h3>我们收集哪些数据</h3>
+        <p><strong>一条都不收。</strong>VoiceCue 不会收集、存储或上传任何个人数据、使用数据、分析数据或遥测数据。</p>
+
+        <h3>本地数据</h3>
+        <p>以下内容只保存在你自己的设备上，永远不会离开：</p>
+        <ul>
+          <li>你的文稿，以及应用根据文稿生成的朗读音频</li>
+          <li>你导入和录制的参考音频</li>
+          <li>导出到相册之前的视频文件</li>
+          <li>你的偏好设置（播放速度、画面比例、朗读音色）</li>
+        </ul>
+        <p>这些内容保存在应用的沙盒里，卸载 VoiceCue 时会一并清除。</p>
+
+        <h3>设备权限</h3>
+        <p>VoiceCue 会申请下面这几项 iOS 权限，全部用于设备本地功能：</p>
+        <ul>
+          <li><strong>相机</strong>：通过前置镜头录你的视频。只保存在本地，不会上传。</li>
+          <li><strong>麦克风</strong>：录制你在视频里的声音，以及录制参考音频。只保存在本地，不会上传。</li>
+          <li><strong>相册（仅添加）</strong>：把做完的视频保存到相册。VoiceCue 无法读取你已有的照片或视频。</li>
+        </ul>
+
+        <h3>网络访问</h3>
+        <p>VoiceCue 完全离线运行。文本转语音由 iPhone 本地的 Apple <code>AVSpeechSynthesizer</code> 完成。任何音频、视频、文字都不会被发到任何服务器。</p>
+
+        <h3>第三方服务</h3>
+        <p>没有。VoiceCue 不使用任何第三方分析、广告、崩溃统计或追踪服务。</p>
+
+        <h3>儿童隐私</h3>
+        <p>VoiceCue 适合所有年龄段。因为应用不收集任何数据，所以不需要为 13 岁以下用户做特别处理。</p>
+
+        <h3>政策变更</h3>
+        <p>如果本政策有变更，更新日期会显示在本页顶部。</p>
+
+        <h3>联系方式</h3>
+        <p>有问题？通过下面任一方式联系我，我本人会回复。</p>
+      </div>
+
       <div class="socials">
         <a href="mailto:yousabrina@me.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email
+          <span class="lang-en">Email</span><span class="lang-zh">邮箱</span>
         </a>
         <a href="https://x.com/ylf1797721" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -198,40 +280,77 @@
     </section>
 
     <section id="support">
-      <h2>Support</h2>
 
-      <h3>Will the reference audio end up in my video?</h3>
-      <p>No. The reference plays <strong>only</strong> in your headphones. The microphone captures your voice alone. The one thing to remember: always wear headphones.</p>
+      <div class="lang-en">
+        <h2>Support</h2>
 
-      <h3>What headphones should I use?</h3>
-      <p>Wired earphones give zero latency and the best feel. AirPods work well too. Other Bluetooth headphones may introduce slight playback lag — it can nudge your rhythm but it never contaminates the recording.</p>
+        <h3>Will the reference audio end up in my video?</h3>
+        <p>No. The reference plays <strong>only</strong> in your headphones. The microphone captures your voice alone. The one thing to remember: always wear headphones.</p>
 
-      <h3>Can I record without headphones?</h3>
-      <p>Technically yes, but the reference audio from the speaker will bleed into the microphone and muddy your recording. Headphones are the whole point — don't skip them.</p>
+        <h3>What headphones should I use?</h3>
+        <p>Wired earphones give zero latency and the best feel. AirPods work well too. Other Bluetooth headphones may introduce slight playback lag — it can nudge your rhythm but it never contaminates the recording.</p>
 
-      <h3>How do I prepare a reference audio?</h3>
-      <p>Three ways, depending on what's easiest for you:</p>
-      <ul>
-        <li><strong>Record it yourself.</strong> Read the script into the app once, and use that take as your reference.</li>
-        <li><strong>Import a file.</strong> Pull in any <code>mp3</code>, <code>m4a</code>, or <code>wav</code> from your phone.</li>
-        <li><strong>Let the app read it.</strong> Type your script and VoiceCue generates speech on-device using a system voice.</li>
-      </ul>
+        <h3>Can I record without headphones?</h3>
+        <p>Technically yes, but the reference audio from the speaker will bleed into the microphone and muddy your recording. Headphones are the whole point — don't skip them.</p>
 
-      <h3>Where are my videos saved?</h3>
-      <p>When you tap <strong>Save to Photos</strong> on the preview screen, the video goes to the iOS Photos app. You can also reopen recent takes from the app's library without saving them to Photos first.</p>
+        <h3>How do I prepare a reference audio?</h3>
+        <p>Three ways, depending on what's easiest for you:</p>
+        <ul>
+          <li><strong>Record it yourself.</strong> Read the script into the app once, and use that take as your reference.</li>
+          <li><strong>Import a file.</strong> Pull in any <code>mp3</code>, <code>m4a</code>, or <code>wav</code> from your phone.</li>
+          <li><strong>Let the app read it.</strong> Type your script and VoiceCue generates speech on-device using a system voice.</li>
+        </ul>
 
-      <h3>Can I change playback speed or aspect ratio?</h3>
-      <p>Yes. Speed adjusts from 0.7× to 1.3× so you can slow a fast reference down or push it a little. Aspect ratio offers 9:16 (portrait, for Reels / TikTok / Shorts), 3:4, and 1:1.</p>
+        <h3>Where are my videos saved?</h3>
+        <p>When you tap <strong>Save to Photos</strong> on the preview screen, the video goes to the iOS Photos app. You can also reopen recent takes from the app's library without saving them to Photos first.</p>
 
-      <h3>Does VoiceCue need internet?</h3>
-      <p>No. Every feature — including text-to-speech — runs on your iPhone.</p>
+        <h3>Can I change playback speed or aspect ratio?</h3>
+        <p>Yes. Speed adjusts from 0.7× to 1.3× so you can slow a fast reference down or push it a little. Aspect ratio offers 9:16 (portrait, for Reels / TikTok / Shorts), 3:4, and 1:1.</p>
 
-      <h3>Still stuck?</h3>
-      <p>Reach out on any of these — I respond personally.</p>
+        <h3>Does VoiceCue need internet?</h3>
+        <p>No. Every feature — including text-to-speech — runs on your iPhone.</p>
+
+        <h3>Still stuck?</h3>
+        <p>Reach out on any of these — I respond personally.</p>
+      </div>
+
+      <div class="lang-zh">
+        <h2>帮助</h2>
+
+        <h3>参考音会被录进我的视频吗？</h3>
+        <p>不会。参考音<strong>只</strong>在耳机里播放。麦克风只录你自己的声音。唯一要记住的事：戴耳机。</p>
+
+        <h3>用什么耳机最好？</h3>
+        <p>有线耳机零延迟，体验最好。AirPods 也可以。其他蓝牙耳机可能有轻微播放延迟，会影响你跟读的节奏，但不会影响录音质量。</p>
+
+        <h3>不戴耳机能录吗？</h3>
+        <p>技术上能，但外放的参考音会被麦克风录进去，成片会很混乱。耳机是这个方法的核心，别省。</p>
+
+        <h3>怎么准备参考音？</h3>
+        <p>三种方式，选你最方便的那一种：</p>
+        <ul>
+          <li><strong>自己录一遍。</strong>对着应用读一遍稿子，拿这一遍当参考。</li>
+          <li><strong>从手机导入。</strong>任何 <code>mp3</code>、<code>m4a</code>、<code>wav</code> 文件都能用。</li>
+          <li><strong>让应用替你读。</strong>输入文稿，VoiceCue 在本地用系统朗读音色合成参考音。</li>
+        </ul>
+
+        <h3>录好的视频存在哪？</h3>
+        <p>在预览页点<strong>保存到相册</strong>，视频会写入 iOS 相册。没保存也没关系，可以在应用的<strong>我的录音</strong>里重新打开最近录的视频。</p>
+
+        <h3>能调播放速度和画面比例吗？</h3>
+        <p>可以。速度在 0.7× 到 1.3× 之间调节，可以把语速快的参考音慢下来，或者稍微推快一点。画面比例支持 9:16（竖屏，适合小红书、抖音、TikTok、Reels、Shorts）、3:4、1:1。</p>
+
+        <h3>VoiceCue 需要联网吗？</h3>
+        <p>不需要。所有功能，包括文本转语音，都在 iPhone 本地运行。</p>
+
+        <h3>还是搞不定？</h3>
+        <p>通过下面任一方式联系我，我本人会回复。</p>
+      </div>
+
       <div class="socials">
         <a href="mailto:yousabrina@me.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email
+          <span class="lang-en">Email</span><span class="lang-zh">邮箱</span>
         </a>
         <a href="https://x.com/ylf1797721" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -245,14 +364,53 @@
     </section>
 
     <section id="about">
-      <h2>About</h2>
-      <p>VoiceCue is an independent project. Built with care for creators who'd rather echo a voice they already own than stare at a teleprompter.</p>
-      <p>If VoiceCue helped you make a video that sounds like you, that's the whole point.</p>
+      <div class="lang-en">
+        <h2>About</h2>
+        <p>VoiceCue is an independent project. Built with care for creators who'd rather echo a voice they already own than stare at a teleprompter.</p>
+        <p>If VoiceCue helped you make a video that sounds like you, that's the whole point.</p>
+      </div>
+      <div class="lang-zh">
+        <h2>关于</h2>
+        <p>VoiceCue 是一个独立项目，做给那些宁愿复述自己的声音、也不愿盯着提词器念稿的创作者。</p>
+        <p>如果 VoiceCue 帮你做出了一条听起来就是你的视频，那就是它全部的意义。</p>
+      </div>
     </section>
 
     <footer>
-      © 2026 VoiceCue · <a href="mailto:yousabrina@me.com">Email</a> · <a href="https://x.com/ylf1797721" target="_blank" rel="noopener">X</a> · <a href="https://www.xiaohongshu.com/user/profile/66e3e0f8000000000b031363?xsec_token=ABeOHZYdLnJZPralUax6t8HJbr5qAG-glahNxcWfqGhVg=&xsec_source=pc_search" target="_blank" rel="noopener">小红书</a>
+      © 2026 VoiceCue ·
+      <a href="mailto:yousabrina@me.com"><span class="lang-en">Email</span><span class="lang-zh">邮箱</span></a> ·
+      <a href="https://x.com/ylf1797721" target="_blank" rel="noopener">X</a> ·
+      <a href="https://www.xiaohongshu.com/user/profile/66e3e0f8000000000b031363?xsec_token=ABeOHZYdLnJZPralUax6t8HJbr5qAG-glahNxcWfqGhVg=&xsec_source=pc_search" target="_blank" rel="noopener">小红书</a>
     </footer>
   </div>
+
+<script>
+  (function() {
+    function setLang(lang) {
+      if (lang !== 'en' && lang !== 'zh') lang = 'en';
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-Hans' : 'en');
+      try { localStorage.setItem('voicecue-lang', lang); } catch (e) {}
+      document.querySelectorAll('.lang-toggle a').forEach(function(a) {
+        a.classList.toggle('active', a.getAttribute('data-lang-set') === lang);
+      });
+    }
+
+    // Priority: URL ?lang=zh/en  >  localStorage  >  browser language
+    var urlLang = (new URLSearchParams(window.location.search)).get('lang');
+    var storedLang;
+    try { storedLang = localStorage.getItem('voicecue-lang'); } catch (e) {}
+    var browserLang = (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
+    setLang(urlLang || storedLang || browserLang);
+
+    document.querySelectorAll('.lang-toggle a').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        setLang(a.getAttribute('data-lang-set'));
+      });
+    });
+  })();
+</script>
+
 </body>
 </html>
