@@ -179,7 +179,7 @@
 
       <div class="lang-en">
         <h2>Privacy Policy</h2>
-        <p class="updated">Last updated: May 2, 2026</p>
+        <p class="updated">Last updated: May 7, 2026</p>
 
         <p>VoiceCue is designed with a simple principle: <strong>what you record is yours alone.</strong> The app does not collect, transmit, or share any personal information.</p>
 
@@ -192,9 +192,11 @@
           <li>Your scripts and the speech the app generates from them</li>
           <li>Your imported and recorded reference audio</li>
           <li>Your video recordings, before you export them to Photos</li>
-          <li>Your preferences (playback speed, aspect ratio, voice selection)</li>
+          <li>Your filler-word dictionary (the words Smart Edit looks for, plus any you've added or removed)</li>
+          <li>Your preferences (recognition language, playback speed, aspect ratio, voice selection)</li>
+          <li>Your 7-day trial start date — stored locally and mirrored to iCloud Key-Value Store under your Apple ID, so reinstalling on a new device doesn't reset the trial. This is the standard iCloud sync mechanism; the data stays inside Apple's iCloud and is never visible to us.</li>
         </ul>
-        <p>These are saved inside the app's sandbox and removed when you uninstall VoiceCue.</p>
+        <p>The on-device items are saved inside the app's sandbox and removed when you uninstall VoiceCue. The iCloud-mirrored install date is removed when you sign out of iCloud or reset your iCloud data.</p>
 
         <h3>Device permissions</h3>
         <p>VoiceCue asks for the following iOS permissions, purely for on-device work:</p>
@@ -205,7 +207,7 @@
         </ul>
 
         <h3>Network access</h3>
-        <p>VoiceCue works fully offline. Text-to-speech runs on your iPhone via Apple's <code>AVSpeechSynthesizer</code>. No audio, video, or text is sent to any server.</p>
+        <p>VoiceCue works fully offline. Text-to-speech runs on your iPhone via Apple's <code>AVSpeechSynthesizer</code>. Smart Edit's filler-word detection also runs entirely on-device, using bundled Whisper-tiny (CoreML) and SenseVoice (ONNX) speech-recognition models that ship inside the app — your audio is transcribed locally and never uploaded to any server for processing. No audio, video, or text leaves your device.</p>
 
         <h3>Third-party services</h3>
         <p>None. VoiceCue does not use any third-party analytics, advertising, crash reporting, or tracking services.</p>
@@ -227,7 +229,7 @@
 
       <div class="lang-zh">
         <h2>隐私政策</h2>
-        <p class="updated">最后更新：2026 年 5 月 2 日</p>
+        <p class="updated">最后更新：2026 年 5 月 7 日</p>
 
         <p>VoiceCue 的原则只有一条：<strong>你录下的东西只属于你。</strong>应用不收集、不上传、不分享任何个人信息。</p>
 
@@ -240,9 +242,11 @@
           <li>你的文稿，以及应用根据文稿生成的朗读音频</li>
           <li>你导入和录制的参考音频</li>
           <li>导出到相册之前的视频文件</li>
-          <li>你的偏好设置（播放速度、画面比例、朗读音色）</li>
+          <li>你的口水词词典（智能剪辑用来识别的那些词，含你自己增删过的部分）</li>
+          <li>你的偏好设置（识别语言、播放速度、画面比例、朗读音色）</li>
+          <li>你的 7 天试用起始日期：本地保存一份，同时通过 iCloud Key-Value Store 同步到你的 Apple ID 下，这样换设备重装时试用期不会被重置。这是 iOS 标准的 iCloud 同步机制，数据存在 Apple 的 iCloud 里，我们看不到也碰不到。</li>
         </ul>
-        <p>这些内容保存在应用的沙盒里，卸载 VoiceCue 时会一并清除。</p>
+        <p>本地的内容保存在应用沙盒里，卸载 VoiceCue 时会一并清除。iCloud 里同步的那份起始日期，在你登出 iCloud 或重置 iCloud 数据时会被清除。</p>
 
         <h3>设备权限</h3>
         <p>VoiceCue 会申请下面这几项 iOS 权限，全部用于设备本地功能：</p>
@@ -253,7 +257,7 @@
         </ul>
 
         <h3>网络访问</h3>
-        <p>VoiceCue 完全离线运行。文本转语音由 iPhone 本地的 Apple <code>AVSpeechSynthesizer</code> 完成。任何音频、视频、文字都不会被发到任何服务器。</p>
+        <p>VoiceCue 完全离线运行。文本转语音由 iPhone 本地的 Apple <code>AVSpeechSynthesizer</code> 完成。智能剪辑的口水词识别也是本地运行的，使用 app 内置的 Whisper-tiny（CoreML）和 SenseVoice（ONNX）语音识别模型直接在设备上转写你的音频，不会上传到任何服务器做处理。任何音频、视频、文字都不会离开你的设备。</p>
 
         <h3>第三方服务</h3>
         <p>没有。VoiceCue 不使用任何第三方分析、广告、崩溃统计或追踪服务。</p>
@@ -314,11 +318,17 @@
         <h3>Where are my videos saved?</h3>
         <p>When you tap <strong>Save to Photos</strong> on the preview screen, the video goes to the iOS Photos app. You can also reopen recent takes from the app's library without saving them to Photos first.</p>
 
+        <h3>What is Smart Edit?</h3>
+        <p>Smart Edit watches your recording for two things: <strong>silent pauses</strong> (you stopping to think) and <strong>filler words</strong> (um, uh, 嗯, 啊, etc.). It marks them on the timeline so you can drop them with a tap before exporting. Everything happens on your phone — your audio is transcribed locally with bundled speech models and never leaves the device.</p>
+
+        <h3>Why is there a trial and a paywall?</h3>
+        <p>Recording, importing reference audio, saving to Photos, and 0.7×–1.3× playback speed are <strong>free forever</strong>. The 7-day free trial unlocks two extra features that take real time and money to build and ship — <strong>AI text-to-speech</strong> and <strong>Smart Edit</strong>. After the trial, those two stay locked behind a one-time purchase (no subscription, yours forever). Everything else keeps working untouched.</p>
+
         <h3>Can I change playback speed or aspect ratio?</h3>
         <p>Yes. Speed adjusts from 0.7× to 1.3× so you can slow a fast reference down or push it a little. Aspect ratio offers 9:16 (portrait, for Reels / TikTok / Shorts), 3:4, and 1:1.</p>
 
         <h3>Does VoiceCue need internet?</h3>
-        <p>No. Every feature — including text-to-speech — runs on your iPhone.</p>
+        <p>No. Every feature — including text-to-speech and Smart Edit's speech recognition — runs on your iPhone.</p>
 
         <h3>Still stuck?</h3>
         <p>Reach out on any of these — I respond personally.</p>
@@ -347,11 +357,17 @@
         <h3>录好的视频存在哪？</h3>
         <p>在预览页点<strong>保存到相册</strong>，视频会写入 iOS 相册。没保存也没关系，可以在应用的<strong>我的录音</strong>里重新打开最近录的视频。</p>
 
+        <h3>智能剪辑是什么？</h3>
+        <p>智能剪辑会在你录完之后扫一遍片子里的两种东西：<strong>静音停顿</strong>（你思考时的间隙）和<strong>口水词</strong>（嗯、啊、然后、um、uh 这些）。它把它们标在时间轴上，你可以一键剔掉再导出。整个过程都在手机本地，音频用 app 自带的语音识别模型转写，永远不会离开你的设备。</p>
+
+        <h3>为什么有试用期和付费墙？</h3>
+        <p>录视频、导入参考音、保存到相册、0.7×–1.3× 倍速调节<strong>永久免费</strong>。7 天免费试用解锁的是两项做起来比较费工的功能——<strong>AI 文本转语音</strong>和<strong>智能剪辑</strong>。试用结束后这两项需要一次性买断（不是订阅，付一次永久解锁），其他功能照常使用，不受任何影响。</p>
+
         <h3>能调播放速度和画面比例吗？</h3>
         <p>可以。速度在 0.7× 到 1.3× 之间调节，可以把语速快的参考音慢下来，或者稍微推快一点。画面比例支持 9:16（竖屏，适合小红书、抖音、TikTok、Reels、Shorts）、3:4、1:1。</p>
 
         <h3>VoiceCue 需要联网吗？</h3>
-        <p>不需要。所有功能，包括文本转语音，都在 iPhone 本地运行。</p>
+        <p>不需要。所有功能，包括文本转语音和智能剪辑的语音识别，都在 iPhone 本地运行。</p>
 
         <h3>还是搞不定？</h3>
         <p>通过下面任一方式联系我，我本人会回复。</p>
