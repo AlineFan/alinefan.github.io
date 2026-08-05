@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="拾纹（Shiwen Design）iOS App 隐私政策。了解图片、相机、相册和本地项目数据的处理方式。">
   <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
   <title>隐私政策 · 拾纹 Shiwen Design</title>
   <style>
     :root {
@@ -66,35 +68,14 @@
       font-weight: 700;
       text-decoration: none;
     }
-    .brand-mark {
-      position: relative;
+    .brand img {
       width: 32px;
       height: 32px;
       flex: 0 0 32px;
       border-radius: 7px;
-      background: #1d1d1d;
-      box-shadow: inset 0 1px 1px rgba(255,255,255,.22);
-    }
-    .brand-mark::before {
-      content: "";
-      position: absolute;
-      top: 5px;
-      left: 12px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--orange);
-      box-shadow: 7px 7px var(--orange), 0 14px var(--orange), -7px 7px var(--orange);
-    }
-    .brand-mark::after {
-      content: "";
-      position: absolute;
-      top: 13px;
-      left: 13px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--blue);
+      display: block;
+      object-fit: cover;
+      background: #fff;
     }
     .brand small {
       color: var(--faint);
@@ -185,7 +166,7 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="../">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <img src="icon.png" alt="拾纹 Logo">
         <span>拾纹 <small>SHIWEN DESIGN</small></span>
       </a>
       <nav class="language-links" aria-label="Language">
