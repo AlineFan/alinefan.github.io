@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="拾纹（Shiwen Design）iOS App 隐私政策。了解图片、相机、相册和本地项目数据的处理方式。">
+  <meta name="color-scheme" content="light">
+  <title>隐私政策 · 拾纹 Shiwen Design</title>
+  <style>
+    :root {
+      --paper: #f6f5f2;
+      --card: #fdfdfc;
+      --ink: #27231f;
+      --muted: #665d55;
+      --faint: #948a80;
+      --line: #dfddd7;
+      --orange: #f43e06;
+      --blue: #1772b4;
+      --mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Noto Sans SC", sans-serif;
+      --serif: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px),
+        var(--paper);
+      background-size: 32px 32px;
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--blue); text-underline-offset: 3px; }
+    a:hover { color: var(--orange); }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 12px 16px;
+      background: rgba(246, 245, 242, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .topbar-inner {
+      max-width: 920px;
+      min-height: 54px;
+      margin: 0 auto;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .brand-mark {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      border-radius: 7px;
+      background: #1d1d1d;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,.22);
+    }
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 12px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 7px 7px var(--orange), 0 14px var(--orange), -7px 7px var(--orange);
+    }
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+    .brand small {
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+    }
+    .language-links { display: flex; gap: 6px; font: 600 11px/1 var(--mono); }
+    .language-links a {
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      text-decoration: none;
+      background: var(--card);
+    }
+    main { max-width: 920px; margin: 28px auto 72px; padding: 0 16px; }
+    .hero, .policy {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .hero { padding: clamp(30px, 7vw, 70px); margin-bottom: 18px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font: 600 11px/1 var(--mono);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--orange); }
+    h1, h2, h3 { line-height: 1.25; }
+    h1 { margin: 0 0 14px; font: 600 clamp(34px, 7vw, 64px)/1.1 var(--serif); }
+    .lead { max-width: 690px; margin: 0; color: var(--muted); font-size: 17px; }
+    .summary {
+      margin-top: 28px;
+      padding: 18px 20px;
+      border-left: 3px solid var(--blue);
+      background: #f3f7fa;
+      font-weight: 600;
+    }
+    .meta { margin-top: 22px; color: var(--faint); font: 500 11px/1.7 var(--mono); }
+    .policy { padding: clamp(24px, 5vw, 54px); }
+    .policy + .policy { margin-top: 18px; }
+    .policy h2 { margin: 0 0 28px; font: 600 30px/1.2 var(--serif); }
+    .policy h3 { margin: 34px 0 10px; font-size: 18px; }
+    .policy p { margin: 0 0 14px; }
+    .policy ul { margin: 10px 0 16px; padding-left: 22px; }
+    .policy li + li { margin-top: 7px; }
+    .permission-table {
+      width: 100%;
+      margin: 18px 0 22px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .permission-table th, .permission-table td {
+      padding: 13px 12px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    .permission-table th { background: var(--paper); font-size: 12px; }
+    .note { color: var(--muted); font-size: 14px; }
+    footer {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 16px 40px;
+      color: var(--faint);
+      font: 500 11px/1.6 var(--mono);
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .brand small { display: none; }
+      .permission-table, .permission-table tbody, .permission-table tr, .permission-table th, .permission-table td { display: block; }
+      .permission-table tr { margin-bottom: 12px; border: 1px solid var(--line); }
+      .permission-table th, .permission-table td { border: 0; }
+      .permission-table th { padding-bottom: 4px; }
+      .permission-table td { padding-top: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>拾纹 <small>SHIWEN DESIGN</small></span>
+      </a>
+      <nav class="language-links" aria-label="Language">
+        <a href="#zh">中文</a>
+        <a href="#en" lang="en">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow">iOS App · Privacy</div>
+      <h1 id="page-title">隐私政策</h1>
+      <p class="lead">本政策说明拾纹（Shiwen Design）iOS App 当前版本如何处理图片、创作项目、系统权限及分享内容。</p>
+      <p class="summary">当前版本采用本地优先模式：无需注册，不包含广告或第三方分析 SDK，也不会把你导入的图片、生成的纹样或本地项目上传到我们的服务器。</p>
+      <p class="meta">生效日期 / Effective date: 2026-08-05<br>适用版本 / Applies to: Shiwen iOS 1.0</p>
+    </section>
+
+    <article class="policy" id="zh" lang="zh-CN">
+      <h2>中文版</h2>
+
+      <h3>1. 适用范围</h3>
+      <p>本政策仅适用于拾纹（Shiwen Design）iOS App 当前公开版本。网站、未来的账号服务、云同步、付费功能或云端纹样提取如有不同的数据处理方式，将在启用前另行说明并更新本政策。</p>
+
+      <h3>2. 我们处理的数据</h3>
+      <p>为了完成你主动发起的创作操作，App 会在设备上处理以下内容：</p>
+      <ul>
+        <li><strong>你选择或拍摄的图片：</strong>用于取样、生成万花筒和重复纹样。</li>
+        <li><strong>生成的纹样与本地项目：</strong>保存在 App 的本地存储中，并显示在画廊。</li>
+        <li><strong>语言偏好：</strong>保存在设备的系统偏好存储中，用于下次打开 App 时保持语言设置。</li>
+      </ul>
+      <p>这些内容由 App 在本机处理。当前版本不会将它们上传给拾纹，也不会用来建立用户档案、投放广告或跨 App/网站追踪你。</p>
+
+      <h3>3. 系统权限</h3>
+      <table class="permission-table">
+        <thead><tr><th>权限或能力</th><th>使用方式</th></tr></thead>
+        <tbody>
+          <tr><td>照片选择器</td><td>只有在你主动选择图片时使用；App 只接收你选中的项目。</td></tr>
+          <tr><td>相机</td><td>只有在你点击拍照时请求，用于创建来源图。</td></tr>
+          <tr><td>添加到照片</td><td>只有在你点击下载或保存到相册时请求，用于写入生成的图片。</td></tr>
+          <tr><td>系统分享</td><td>只有在你点击分享后打开。内容仅发送到你选择的目标 App 或服务。</td></tr>
+        </tbody>
+      </table>
+      <p class="note">你可以在 iOS“设置”中查看或撤销权限。撤销权限可能会让对应功能无法使用，但不会影响不依赖该权限的本地创作。</p>
+
+      <h3>4. 账号、联网、分析与广告</h3>
+      <ul>
+        <li>当前版本无需创建账号或登录。</li>
+        <li>当前版本不启用云同步，也不把创作内容发送到我们的服务器。</li>
+        <li>当前版本不包含第三方广告、行为分析或跨产品追踪 SDK。</li>
+        <li>纹样提取入口当前仅为功能预告，不会上传或分析图片。</li>
+      </ul>
+      <p>Apple 可能根据你的设备设置处理 App Store 下载、购买、崩溃或诊断数据。这部分由 Apple 按其隐私政策处理，我们不会通过 App 内自建 SDK 额外收集这些信息。</p>
+
+      <h3>5. 分享与第三方服务</h3>
+      <p>当你主动使用 iOS 系统分享面板时，接收方由你选择。目标 App 或服务收到内容后的处理行为受其自身隐私政策约束。拾纹不会在后台自动分享你的作品。</p>
+
+      <h3>6. 保存、删除与备份</h3>
+      <ul>
+        <li>来源图片副本和纹样项目会保留在 App 本地，直到你在画廊中删除或卸载 App。</li>
+        <li>已保存到系统照片图库或发送到其他服务的副本，需要在相应位置单独删除。</li>
+        <li>如果设备启用了系统备份，App 数据可能由 Apple 按你的 iCloud 与设备备份设置进行备份。</li>
+      </ul>
+      <p>由于当前版本没有用户账号或云端项目库，我们无法从服务器读取或删除你的本地作品。你可以直接在 App 内删除，或卸载 App 清除其本地数据。</p>
+
+      <h3>7. 儿童隐私</h3>
+      <p>拾纹是一款通用设计工具，不以 13 岁以下儿童为目标用户。当前版本不通过服务器主动收集儿童或其他用户的个人信息。</p>
+
+      <h3>8. 政策更新</h3>
+      <p>当 App 增加账号、付费、分析、云同步、云端提取或其他会改变数据处理方式的功能时，我们会在相应功能启用前更新本页面，并调整生效日期。重大变化会尽量在 App 内提示。</p>
+
+      <h3>9. 联系我们</h3>
+      <p>如对本政策或 App 的数据处理有疑问，请发送邮件至 <a href="mailto:yousabrina@126.com">yousabrina@126.com</a>。请勿在邮件中附上不必要的私人照片、身份信息或其他敏感内容。</p>
+    </article>
+
+    <article class="policy" id="en" lang="en">
+      <h2>English Version</h2>
+
+      <h3>1. Scope</h3>
+      <p>This policy applies to the current public version of the Shiwen Design iOS app. If the website or future account, cloud sync, payment, analytics, or cloud-based Extraction features process data differently, we will explain those practices and update this policy before they are enabled.</p>
+
+      <h3>2. Data processed by the app</h3>
+      <p>To perform actions you request, the app processes the following content on your device:</p>
+      <ul>
+        <li><strong>Images you select or capture:</strong> used as source material for sampling, kaleidoscope rendering, and repeat-pattern creation.</li>
+        <li><strong>Generated patterns and local projects:</strong> stored locally by the app and displayed in Gallery.</li>
+        <li><strong>Language preference:</strong> stored in the device preferences so the app can remember your selected language.</li>
+      </ul>
+      <p>The current version processes this content locally. It does not upload the content to Shiwen, use it for advertising, build a user profile, or track you across apps or websites.</p>
+
+      <h3>3. System permissions and features</h3>
+      <table class="permission-table">
+        <thead><tr><th>Permission or feature</th><th>How it is used</th></tr></thead>
+        <tbody>
+          <tr><td>Photo picker</td><td>Used only when you choose an image. The app receives only the items you select.</td></tr>
+          <tr><td>Camera</td><td>Requested only when you choose to take a photo for use as source material.</td></tr>
+          <tr><td>Add to Photos</td><td>Requested only when you download or save a generated image to your photo library.</td></tr>
+          <tr><td>System share sheet</td><td>Opened only when you choose Share. Content is sent only to the app or service you select.</td></tr>
+        </tbody>
+      </table>
+      <p class="note">You can review or revoke permissions in iOS Settings. Revoking a permission may disable the related feature, but it does not prevent other local creation features from working.</p>
+
+      <h3>4. Accounts, network use, analytics, and advertising</h3>
+      <ul>
+        <li>The current version does not require an account or sign-in.</li>
+        <li>The current version does not enable cloud sync or send your creative content to our servers.</li>
+        <li>The current version does not include third-party advertising, behavioral analytics, or cross-product tracking SDKs.</li>
+        <li>The Extraction entry is currently a feature preview only and does not upload or analyze images.</li>
+      </ul>
+      <p>Apple may process App Store download, purchase, crash, or diagnostic data according to your device settings and Apple's privacy policy. We do not add an in-app analytics SDK to collect this information separately.</p>
+
+      <h3>5. Sharing and third-party services</h3>
+      <p>When you open the iOS share sheet, you choose the recipient. The selected app or service handles the shared content under its own privacy policy. Shiwen does not automatically share your work in the background.</p>
+
+      <h3>6. Storage, deletion, and backups</h3>
+      <ul>
+        <li>Source-image copies and pattern projects remain in the app's local storage until you delete them in Gallery or uninstall the app.</li>
+        <li>Copies saved to Photos or sent to another service must be deleted separately from those destinations.</li>
+        <li>If system backup is enabled, Apple may back up app data according to your iCloud and device backup settings.</li>
+      </ul>
+      <p>Because the current version has no user account or cloud project library, we cannot access or delete your local projects from a server. You can delete them directly in the app or remove the app and its local data.</p>
+
+      <h3>7. Children's privacy</h3>
+      <p>Shiwen is a general-purpose design tool and is not directed to children under 13. The current version does not actively collect personal information from children or other users through our servers.</p>
+
+      <h3>8. Changes to this policy</h3>
+      <p>If the app adds accounts, payments, analytics, cloud sync, cloud-based Extraction, or another feature that changes how data is handled, we will update this page before enabling that processing and revise the effective date. We will aim to provide an in-app notice for material changes.</p>
+
+      <h3>9. Contact</h3>
+      <p>For questions about this policy or the app's data practices, email <a href="mailto:yousabrina@126.com">yousabrina@126.com</a>. Do not attach unnecessary private photos, identity information, or other sensitive content.</p>
+    </article>
+  </main>
+
+  <footer>© 2026 Shiwen Design · <a href="../">Back to Shiwen / 返回拾纹</a></footer>
+</body>
+</html>
