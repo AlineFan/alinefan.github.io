@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="拾纹（Shiwen Design）iOS App 支持页面。查看相册、相机和保存权限说明、数据存储方式与联系方式。">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <title>支持 · 拾纹 Shiwen Design</title>
+  <style>
+    :root {
+      --paper: #f6f5f2;
+      --card: #fdfdfc;
+      --ink: #27231f;
+      --muted: #665d55;
+      --faint: #948a80;
+      --line: #dfddd7;
+      --orange: #f43e06;
+      --blue: #1772b4;
+      --mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Noto Sans SC", sans-serif;
+      --serif: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px),
+        var(--paper);
+      background-size: 32px 32px;
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--blue); text-underline-offset: 3px; }
+    a:hover { color: var(--orange); }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 12px 16px;
+      background: rgba(246, 245, 242, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .topbar-inner {
+      max-width: 920px;
+      min-height: 54px;
+      margin: 0 auto;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .brand img {
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      border-radius: 7px;
+      display: block;
+      object-fit: cover;
+      background: #fff;
+    }
+    .brand small {
+      color: var(--faint);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+    }
+    .language-links { display: flex; gap: 6px; font: 600 11px/1 var(--mono); }
+    .language-links a {
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      text-decoration: none;
+      background: var(--card);
+    }
+    main { max-width: 920px; margin: 28px auto 72px; padding: 0 16px; }
+    .hero, .support-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .hero { padding: clamp(30px, 7vw, 70px); margin-bottom: 18px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font: 600 11px/1 var(--mono);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--orange); }
+    h1, h2, h3 { line-height: 1.25; }
+    h1 { margin: 0 0 14px; font: 600 clamp(34px, 7vw, 64px)/1.1 var(--serif); }
+    .lead { max-width: 720px; margin: 0; color: var(--muted); font-size: 17px; }
+    .lead + .lead { margin-top: 12px; }
+    .contact {
+      display: inline-flex;
+      margin-top: 26px;
+      padding: 12px 16px;
+      color: #fff;
+      background: var(--ink);
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .contact:hover { color: #fff; background: var(--blue); }
+    .support-card { padding: clamp(24px, 5vw, 54px); }
+    .support-card + .support-card { margin-top: 18px; }
+    .support-card h2 { margin: 0 0 28px; font: 600 30px/1.2 var(--serif); }
+    .support-card h3 { margin: 34px 0 10px; font-size: 18px; }
+    .support-card p { margin: 0 0 14px; }
+    .support-card ul { margin: 10px 0 16px; padding-left: 22px; }
+    .support-card li + li { margin-top: 7px; }
+    .permission-table {
+      width: 100%;
+      margin: 18px 0 22px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .permission-table th, .permission-table td {
+      padding: 13px 12px;
+      border: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    .permission-table th { background: var(--paper); font-size: 12px; }
+    .note { color: var(--muted); font-size: 14px; }
+    footer {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 16px 40px;
+      color: var(--faint);
+      font: 500 11px/1.6 var(--mono);
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .brand small { display: none; }
+      .permission-table, .permission-table tbody, .permission-table tr, .permission-table th, .permission-table td { display: block; }
+      .permission-table tr { margin-bottom: 12px; border: 1px solid var(--line); }
+      .permission-table th, .permission-table td { border: 0; }
+      .permission-table th { padding-bottom: 4px; }
+      .permission-table td { padding-top: 4px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="support.html">
+        <img src="icon.png" alt="拾纹 Logo">
+        <span>拾纹 <small>SHIWEN DESIGN</small></span>
+      </a>
+      <nav class="language-links" aria-label="Language and legal">
+        <a href="#zh">中文</a>
+        <a href="#en" lang="en">English</a>
+        <a href="index.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="eyebrow">iOS App · Support</div>
+      <h1 id="page-title">支持</h1>
+      <p class="lead">拾纹是一款从日常影像中发现纹样灵感的创作工具。</p>
+      <p class="lead">一张照片、一扇窗、一块布料，甚至一幅随手涂鸦，都可以成为图案创作的起点。拾纹帮助你将熟悉的素材转化为独特的纹样、图案，在变化与秩序之间探索新的视觉可能。</p>
+      <a class="contact" href="mailto:yousabrina@me.com">联系支持 · yousabrina@me.com</a>
+    </section>
+
+    <article class="support-card" id="zh" lang="zh-CN">
+      <h2>中文版</h2>
+
+      <h3>相册、相机和保存权限</h3>
+      <table class="permission-table">
+        <thead><tr><th>权限或能力</th><th>使用方式</th></tr></thead>
+        <tbody>
+          <tr><td>照片选择器</td><td>当你主动选择来源图片时使用。拾纹只接收你选中的图片，用于生成纹样。</td></tr>
+          <tr><td>相机</td><td>当你点击拍照时请求，用于拍摄纹样来源图。拾纹不会在后台调用相机。</td></tr>
+          <tr><td>添加到照片</td><td>当你点击下载或保存到相册时请求，用于将生成的图片写入系统照片图库。</td></tr>
+          <tr><td>系统分享</td><td>当你点击分享时打开。作品只会发送到你选择的 App、联系人或服务。</td></tr>
+        </tbody>
+      </table>
+      <p class="note">你可以在 iOS“设置”中查看或撤销这些权限。撤销权限只会影响对应功能。</p>
+
+      <h3>数据存储说明</h3>
+      <ul>
+        <li>当前版本无需注册或登录。</li>
+        <li>你选择的图片、生成的纹样和画廊项目默认保存在设备本地，不会上传到拾纹服务器。</li>
+        <li>本地项目会保留到你在画廊中删除，或卸载 App。</li>
+        <li>保存到系统照片图库或分享给其他服务的副本，需要在对应位置单独删除。</li>
+        <li>如果设备启用了系统备份，Apple 可能依据你的 iCloud 和设备备份设置备份 App 数据。</li>
+      </ul>
+
+      <h3>隐私政策</h3>
+      <p>完整的数据处理说明请查看<a href="index.html">《拾纹隐私政策》</a>。</p>
+
+      <h3>联系我们</h3>
+      <p>如需帮助，请发送邮件至 <a href="mailto:yousabrina@me.com">yousabrina@me.com</a>。请简要说明设备型号、iOS 版本和遇到的问题；请勿附上不必要的私人照片或敏感信息。</p>
+    </article>
+
+    <article class="support-card" id="en" lang="en">
+      <h2>English Version</h2>
+      <p>Shiwen is a creative pattern design tool for discovering pattern inspiration in everyday images.</p>
+      <p>A photo, a window, a piece of fabric, or even a casual doodle can become the starting point for a new design. Shiwen helps transform familiar materials into unique motifs and patterns, letting you explore new visual possibilities through variation and order.</p>
+
+      <h3>Photos, camera, and saving permissions</h3>
+      <table class="permission-table">
+        <thead><tr><th>Permission or feature</th><th>How it is used</th></tr></thead>
+        <tbody>
+          <tr><td>Photo picker</td><td>Used when you choose a source image. Shiwen receives only the images you select and uses them to create patterns.</td></tr>
+          <tr><td>Camera</td><td>Requested when you choose to take a source photo. Shiwen does not access the camera in the background.</td></tr>
+          <tr><td>Add to Photos</td><td>Requested when you download or save a creation to the system photo library.</td></tr>
+          <tr><td>System share sheet</td><td>Opened when you choose Share. Your work is sent only to the app, person, or service you select.</td></tr>
+        </tbody>
+      </table>
+      <p class="note">You can review or revoke these permissions in iOS Settings. Revoking a permission affects only the related feature.</p>
+
+      <h3>Data storage</h3>
+      <ul>
+        <li>The current version does not require an account or sign-in.</li>
+        <li>Selected images, generated patterns, and Gallery projects are stored locally on your device by default and are not uploaded to Shiwen servers.</li>
+        <li>Local projects remain until you delete them in Gallery or uninstall the app.</li>
+        <li>Copies saved to Photos or shared with another service must be deleted separately from those destinations.</li>
+        <li>If system backup is enabled, Apple may back up app data according to your iCloud and device backup settings.</li>
+      </ul>
+
+      <h3>Privacy policy</h3>
+      <p>Read the complete <a href="index.html">Shiwen Privacy Policy</a>.</p>
+
+      <h3>Contact</h3>
+      <p>For support, email <a href="mailto:yousabrina@me.com">yousabrina@me.com</a>. Include your device model, iOS version, and a short description of the issue. Do not attach unnecessary private photos or sensitive information.</p>
+    </article>
+  </main>
+
+  <footer>© 2026 Shiwen Design · <a href="index.html">Privacy Policy / 隐私政策</a></footer>
+</body>
+</html>
