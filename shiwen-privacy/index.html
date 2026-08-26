@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="拾纹（Shiwen Design）iOS App 隐私政策。说明本地创作数据、系统权限，以及 Apple、RevenueCat、PostHog 等第三方依赖。">
+  <meta name="description" content="拾纹（Shiwen Design）App 隐私政策。说明图片、本机抠图与 AI 高清、购买和产品分析的处理方式。">
   <meta name="color-scheme" content="light">
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
@@ -179,27 +179,27 @@
 
   <main>
     <section class="hero" aria-labelledby="page-title">
-      <div class="eyebrow">iOS App · Privacy</div>
+      <div class="eyebrow">iPhone · iPad · Mac · Privacy</div>
       <h1 id="page-title">隐私政策</h1>
-      <p class="lead">本政策说明拾纹（Shiwen Design）iOS App 2.0 如何处理图片、创作项目、系统权限、付费权益，以及接入的第三方服务。</p>
-      <p class="summary">创作仍是本地优先：无需注册，没有广告，也不会把你导入的图片、生成的纹样或本地项目上传到拾纹服务器。风格处理、AI 高清和高清导出都在设备上完成。App 接入了 Apple、RevenueCat 和 PostHog，分别用于内购、权益校验和匿名产品分析。</p>
-      <p class="meta">生效日期 / Effective date: 2026-08-19<br>适用版本 / Applies to: Shiwen iOS 2.0</p>
+      <p class="lead">本政策说明拾纹（Shiwen Design）当前版本如何处理图片、本机创作、购买及产品分析。</p>
+      <p class="summary">图片、抠图和 AI 高清都在本机完成，不会上传到拾纹服务器。无需注册。购买走 Apple。产品分析只记录匿名操作事件，不含照片、邮箱或 Apple ID。</p>
+      <p class="meta">生效日期 / Effective date: 2026-08-26<br>适用版本 / Applies to: 拾纹 2.1.0</p>
     </section>
 
     <article class="policy" id="zh" lang="zh-CN">
       <h2>中文版</h2>
 
       <h3>1. 适用范围</h3>
-      <p>本政策仅适用于拾纹（Shiwen Design）iOS App 2.0。网站、未来的账号服务或云同步如有不同的数据处理方式，将在启用前另行说明并更新本政策。</p>
+      <p>本政策适用于拾纹（Shiwen Design）App 2.1.0，包括 iPhone、iPad，以及在 Mac 上运行的同一款 App。网站、未来的账号服务或云同步如有不同的数据处理方式，将在启用前另行说明并更新本政策。</p>
 
       <h3>2. 我们处理的数据</h3>
       <p>为了完成你主动发起的创作、购买或反馈，App 会处理以下内容：</p>
       <ul>
-        <li><strong>你选择或拍摄的图片：</strong>用于取样、生成万花筒和重复纹样。风格处理、AI 高清和高清导出均在设备本地完成，不会把原图送到拾纹服务器。</li>
-        <li><strong>生成的纹样与本地项目：</strong>保存在 App 的本地存储中，并显示在画廊。</li>
-        <li><strong>语言、触感和音效偏好：</strong>保存在设备本地，用于下次打开 App 时保持设置。</li>
-        <li><strong>购买与 Pro 权益状态：</strong>通过 Apple 内购和 RevenueCat 校验，用于解锁风格导出、高清下载等付费功能。</li>
-        <li><strong>匿名产品事件：</strong>通过 PostHog 记录引导、付费墙、购买、保存、分享、普通/高清下载和反馈等操作，用于改进产品。事件不绑定邮箱或 Apple ID。</li>
+        <li><strong>你选择或拍摄的图片：</strong>用于取样、万花筒、本机抠图和本机 AI 高清。风格处理、抠图、AI 高清和高清导出都在设备上完成，不会把原图送到拾纹服务器。</li>
+        <li><strong>生成的纹样、抠图元素与本地项目：</strong>保存在 App 的本地存储中，并显示在画廊。</li>
+        <li><strong>语言、触感和音效偏好：</strong>保存在设备本地，用于下次打开时保持设置。</li>
+        <li><strong>购买与 Pro 权益状态：</strong>通过 Apple 内购（StoreKit）在本机核对，用于解锁风格导出、高清下载、三种新玩法和抠图带出等付费功能。拾纹看不到你的 Apple ID 或付款卡号。</li>
+        <li><strong>匿名产品事件：</strong>通过 PostHog 记录引导、付费墙、购买、保存、分享、普通/高清下载和反馈等操作。事件不绑定邮箱或 Apple ID，也不含照片或纹样。</li>
       </ul>
       <p>图片和纹样由 App 在本机处理，不会上传给拾纹，也不会用来建立可识别的用户档案、投放广告或跨 App/网站追踪你。</p>
 
@@ -209,59 +209,46 @@
         <tbody>
           <tr><td>照片选择器</td><td>只有在你主动选择图片时使用；App 只接收你选中的项目。</td></tr>
           <tr><td>相机</td><td>只有在你点击拍照时请求，用于创建来源图。</td></tr>
-          <tr><td>添加到照片</td><td>只有在你点击下载或保存到相册时请求，用于写入生成的图片。</td></tr>
+          <tr><td>添加到照片</td><td>只有在 iPhone / iPad 上点击下载或保存到相册时请求。</td></tr>
+          <tr><td>文件保存（Mac）</td><td>在 Mac 上把成品写到你选择的位置，不经过系统照片图库。</td></tr>
           <tr><td>系统分享</td><td>只有在你点击分享后打开。内容仅发送到你选择的目标 App 或服务。</td></tr>
+          <tr><td>App 内购买</td><td>购买与恢复走 Apple。系统收据用于确认 Pro 权益。</td></tr>
         </tbody>
       </table>
-      <p class="note">你可以在 iOS“设置”中查看或撤销权限。撤销权限可能会让对应功能无法使用，但不会影响不依赖该权限的本地创作。</p>
+      <p class="note">你可以在系统设置中查看或撤销权限。撤销权限可能会让对应功能无法使用，但不会影响不依赖该权限的本地创作。</p>
 
       <h3>4. 账号、联网、分析与广告</h3>
       <ul>
         <li>当前版本无需创建账号或登录，也不启用云同步。</li>
-        <li>导入的图片、生成的纹样和画廊项目不会发送到拾纹服务器。</li>
+        <li>导入的图片、抠图结果、生成的纹样和画廊项目不会发送到拾纹服务器。</li>
         <li>没有广告，不使用广告标识符（IDFA），不做跨 App 或跨网站追踪。</li>
-        <li>App 会联网以完成 App Store 内购、RevenueCat 权益校验，以及 PostHog 匿名产品分析。</li>
+        <li>App 会联网以完成 App Store 内购，以及 PostHog 匿名产品分析。</li>
       </ul>
 
       <h3>5. 第三方依赖</h3>
-      <p>当前 iOS 版本接入的第三方服务如下。它们都<strong>不会收到你的来源图或纹样作品</strong>。</p>
+      <p>当前版本接入的第三方服务如下。它们都不会收到你的来源图或纹样作品。</p>
       <table class="permission-table">
-        <thead>
-          <tr>
-            <th>服务</th>
-            <th>用途</th>
-            <th>可能收到的数据</th>
-            <th>隐私政策</th>
-          </tr>
-        </thead>
+        <thead><tr><th>服务</th><th>用途</th><th>可能收到的数据</th></tr></thead>
         <tbody>
           <tr>
-            <td>Apple<br>App Store / StoreKit</td>
+            <td>Apple App Store / StoreKit</td>
             <td>下载、内购、恢复购买、系统备份与诊断</td>
-            <td>由 Apple 处理的 Apple ID、付款信息和设备信息。拾纹看不到你的付款卡号。</td>
-            <td><a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple 隐私政策</a></td>
-          </tr>
-          <tr>
-            <td>RevenueCat</td>
-            <td>校验和同步 Shiwen Pro 权益（永久买断、月订、年订）</td>
-            <td>匿名 App User ID、商品 ID、交易状态。不采集邮箱、Apple ID、姓名、照片或纹样。App 不会调用身份识别接口把购买绑定到你的个人身份。</td>
-            <td><a href="https://www.revenuecat.com/privacy" rel="noopener noreferrer">RevenueCat Privacy Policy</a></td>
+            <td>由 Apple 处理的 Apple ID、付款信息和设备信息。拾纹看不到你的付款卡号。<a href="https://www.apple.com/legal/privacy/">Apple 隐私政策</a></td>
           </tr>
           <tr>
             <td>PostHog</td>
             <td>匿名产品分析，用于理解功能使用和付费漏斗</td>
-            <td>匿名设备标识、应用生命周期，以及产品事件（如完成引导、付费墙出现及来源、开始/成功/失败购买、恢复购买、保存、分享、普通或高清下载、打开反馈、业务错误摘要）。不采集邮箱、Apple ID、广告标识、姓名、照片或纹样。不开启会话回放，不把事件关联到可识别身份。</td>
-            <td><a href="https://posthog.com/privacy" rel="noopener noreferrer">PostHog Privacy Policy</a></td>
+            <td>匿名设备标识、应用生命周期，以及产品事件（完成引导、付费墙及来源、开始/成功/失败购买、恢复购买、保存、分享、普通或高清下载、打开反馈、业务错误摘要）。不采集邮箱、Apple ID、广告标识、姓名、照片或纹样。不开启会话回放。<a href="https://posthog.com/privacy">PostHog Privacy Policy</a></td>
           </tr>
         </tbody>
       </table>
-      <p class="note">上述服务按其自身政策处理数据。我们不会把你的创作内容提供给它们做广告或训练用途。</p>
-      <p>当你主动使用 iOS 系统分享面板，或通过「用户反馈」发送邮件时，接收方由你选择。分享内容或反馈附件（含设备型号、系统版本、App 版本、语言、是否 Pro，以及简短的业务错误记录）受对应服务或邮件服务商的政策约束。拾纹不会在后台自动分享你的作品。</p>
+      <p>2.1.0 已不再使用 RevenueCat。购买只走 Apple StoreKit。</p>
+      <p>当你主动使用系统分享面板，或通过「用户反馈」发送邮件时，接收方由你选择。分享内容或反馈附件（含设备型号、系统版本、App 版本、语言、是否 Pro，以及简短的业务错误记录）受对应服务或邮件服务商的政策约束。拾纹不会在后台自动分享你的作品。</p>
 
       <h3>6. 保存、删除与备份</h3>
       <ul>
-        <li>来源图片副本和纹样项目会保留在 App 本地，直到你在画廊中删除或卸载 App。</li>
-        <li>已保存到系统照片图库或发送到其他服务的副本，需要在相应位置单独删除。</li>
+        <li>来源图片副本、纹样和抠图元素会保留在 App 本地，直到你在画廊中删除或卸载 App。</li>
+        <li>已保存到系统照片、Mac 文件或其他服务的副本，需要在相应位置单独删除。</li>
         <li>如果设备启用了系统备份，App 数据可能由 Apple 按你的 iCloud 与设备备份设置进行备份。</li>
       </ul>
       <p>由于当前版本没有用户账号或云端项目库，我们无法从服务器读取或删除你的本地作品。你可以直接在 App 内删除，或卸载 App 清除其本地数据。</p>
@@ -280,16 +267,16 @@
       <h2>English Version</h2>
 
       <h3>1. Scope</h3>
-      <p>This policy applies to Shiwen Design iOS app 2.0. If the website or future account or cloud-sync features process data differently, we will explain those practices and update this policy before they are enabled.</p>
+      <p>This policy applies to Shiwen Design app 2.1.0 on iPhone, iPad, and Mac. If the website or a future account or cloud-sync feature processes data differently, we will explain those practices and update this policy before they are enabled.</p>
 
       <h3>2. Data processed by the app</h3>
       <p>To perform creation, purchase, or feedback actions you request, the app processes:</p>
       <ul>
-        <li><strong>Images you select or capture:</strong> used as source material for sampling, kaleidoscope rendering, and repeat-pattern creation. Style processing, AI HD enhancement, and HD export all run on-device and do not send the original image to Shiwen servers.</li>
-        <li><strong>Generated patterns and local projects:</strong> stored locally by the app and displayed in Gallery.</li>
-        <li><strong>Language, haptics, and sound preferences:</strong> stored on-device so the app can remember your settings.</li>
-        <li><strong>Purchase and Pro entitlement status:</strong> checked through Apple In-App Purchase and RevenueCat to unlock paid features such as styled export and HD download.</li>
-        <li><strong>Anonymous product events:</strong> recorded with PostHog for onboarding, paywall, purchase, save, share, standard/HD download, and feedback actions, so we can improve the product. Events are not tied to an email address or Apple ID.</li>
+        <li><strong>Images you select or capture:</strong> used for sampling, kaleidoscope rendering, on-device cutout, and on-device AI HD. Style processing, cutout, AI HD, and HD export all run on-device and do not send the original image to Shiwen servers.</li>
+        <li><strong>Generated patterns, cutout elements, and local projects:</strong> stored locally by the app and shown in Gallery.</li>
+        <li><strong>Language, haptics, and sound preferences:</strong> stored on the device so the next launch keeps your choices.</li>
+        <li><strong>Purchase and Pro entitlement status:</strong> checked through Apple In-App Purchase (StoreKit) to unlock paid features such as styled export, HD download, the three new play modes, and taking a cutout out of the app. Shiwen cannot see your Apple ID or payment card number.</li>
+        <li><strong>Anonymous product events:</strong> recorded with PostHog for onboarding, paywall, purchase, save, share, standard/HD download, and feedback. Events are not tied to an email or Apple ID and do not include photos or patterns.</li>
       </ul>
       <p>Images and patterns are processed on-device. They are not uploaded to Shiwen, used for advertising, used to build an identifiable user profile, or used to track you across apps or websites.</p>
 
@@ -298,63 +285,50 @@
         <thead><tr><th>Permission or feature</th><th>How it is used</th></tr></thead>
         <tbody>
           <tr><td>Photo picker</td><td>Used only when you choose an image. The app receives only the items you select.</td></tr>
-          <tr><td>Camera</td><td>Requested only when you choose to take a photo for use as source material.</td></tr>
-          <tr><td>Add to Photos</td><td>Requested only when you download or save a generated image to your photo library.</td></tr>
+          <tr><td>Camera</td><td>Requested only when you take a photo to use as source material.</td></tr>
+          <tr><td>Add to Photos</td><td>Requested on iPhone and iPad only when you download or save a generated image to Photos.</td></tr>
+          <tr><td>File save (Mac)</td><td>On Mac, finished images are written to a location you choose instead of the Photos library.</td></tr>
           <tr><td>System share sheet</td><td>Opened only when you choose Share. Content is sent only to the app or service you select.</td></tr>
+          <tr><td>In-app purchase</td><td>Purchases and restores go through Apple. The system receipt is used to confirm Pro access.</td></tr>
         </tbody>
       </table>
-      <p class="note">You can review or revoke permissions in iOS Settings. Revoking a permission may disable the related feature, but it does not prevent other local creation features from working.</p>
+      <p class="note">You can review or revoke permissions in system Settings. Revoking a permission may disable the related feature, but it does not prevent other local creation features from working.</p>
 
       <h3>4. Accounts, network use, analytics, and advertising</h3>
       <ul>
         <li>The current version does not require an account or sign-in, and does not enable cloud sync.</li>
-        <li>Imported images, generated patterns, and Gallery projects are not sent to Shiwen servers.</li>
+        <li>Imported images, cutouts, generated patterns, and Gallery projects are not sent to Shiwen servers.</li>
         <li>There are no ads, no IDFA, and no cross-app or cross-website tracking.</li>
-        <li>The app uses the network for App Store purchases, RevenueCat entitlement checks, and anonymous PostHog product analytics.</li>
+        <li>The app uses the network for App Store purchases and anonymous PostHog product analytics.</li>
       </ul>
 
       <h3>5. Third-party services</h3>
-      <p>The current iOS version uses the following third-party services. <strong>None of them receive your source images or pattern artwork.</strong></p>
+      <p>The current version uses the following third-party services. None of them receive your source images or pattern artwork.</p>
       <table class="permission-table">
-        <thead>
-          <tr>
-            <th>Service</th>
-            <th>Purpose</th>
-            <th>Data that may be received</th>
-            <th>Privacy policy</th>
-          </tr>
-        </thead>
+        <thead><tr><th>Service</th><th>Purpose</th><th>Data that may be received</th></tr></thead>
         <tbody>
           <tr>
-            <td>Apple<br>App Store / StoreKit</td>
+            <td>Apple App Store / StoreKit</td>
             <td>Downloads, in-app purchases, restore purchases, system backup, and diagnostics</td>
-            <td>Apple ID, payment details, and device information processed by Apple. Shiwen cannot see your payment card number.</td>
-            <td><a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer">Apple Privacy Policy</a></td>
-          </tr>
-          <tr>
-            <td>RevenueCat</td>
-            <td>Verify and sync Shiwen Pro entitlements (lifetime, monthly, yearly)</td>
-            <td>Anonymous App User ID, product IDs, and transaction status. No email, Apple ID, name, photos, or patterns. The app does not call identify APIs to attach purchases to your personal identity.</td>
-            <td><a href="https://www.revenuecat.com/privacy" rel="noopener noreferrer">RevenueCat Privacy Policy</a></td>
+            <td>Apple ID, payment details, and device information processed by Apple. Shiwen cannot see your payment card number. <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a></td>
           </tr>
           <tr>
             <td>PostHog</td>
             <td>Anonymous product analytics for feature use and the payment funnel</td>
-            <td>An anonymous device identifier, app lifecycle events, and product events such as onboarding completed, paywall viewed (with source), purchase started/succeeded/failed, restore purchases, save, share, standard or HD download, feedback opened, and short business-error summaries. No email, Apple ID, IDFA, name, photos, or patterns. Session replay is off, and events are not tied to an identifiable person.</td>
-            <td><a href="https://posthog.com/privacy" rel="noopener noreferrer">PostHog Privacy Policy</a></td>
+            <td>An anonymous device identifier, app lifecycle events, and product events such as onboarding completed, paywall viewed (with source), purchase started/succeeded/failed, restore purchases, save, share, standard or HD download, feedback opened, and short business-error summaries. No email, Apple ID, IDFA, name, photos, or patterns. Session replay is off. <a href="https://posthog.com/privacy">PostHog Privacy Policy</a></td>
           </tr>
         </tbody>
       </table>
-      <p class="note">These services process data under their own policies. We do not provide your creative content to them for advertising or model training.</p>
-      <p>If you use the iOS share sheet or send mail through User Feedback, you choose the recipient. Shared artwork or the feedback attachment (device model, iOS version, app version, language, Pro status, and short business-error notes) is then handled by that app or mail provider. Shiwen does not automatically share your work in the background.</p>
+      <p>Version 2.1.0 no longer uses RevenueCat. Purchases go through Apple StoreKit only.</p>
+      <p>If you use the system share sheet or send mail through User Feedback, you choose the recipient. Shared artwork or the feedback attachment (device model, system version, app version, language, Pro status, and short business-error notes) is then handled by that app or mail provider. Shiwen does not automatically share your work in the background.</p>
 
       <h3>6. Storage, deletion, and backups</h3>
       <ul>
-        <li>Source-image copies and pattern projects remain in the app's local storage until you delete them in Gallery or uninstall the app.</li>
-        <li>Copies saved to Photos or sent to another service must be deleted separately from those destinations.</li>
+        <li>Source-image copies, patterns, and cutout elements remain in the app's local storage until you delete them in Gallery or uninstall the app.</li>
+        <li>Copies saved to Photos, a Mac file, or another service must be deleted separately from those destinations.</li>
         <li>If system backup is enabled, Apple may back up app data according to your iCloud and device backup settings.</li>
       </ul>
-      <p>Because the current version has no user account or cloud project library, we cannot access or delete your local projects from a server. You can delete them directly in the app or remove the app and its local data.</p>
+      <p>Because the current version has no user account or cloud project library, we cannot access or delete your local projects from a server. You can delete them in the app or remove the app and its local data.</p>
 
       <h3>7. Children's privacy</h3>
       <p>Shiwen is a general-purpose design tool and is not directed to children under 13. The current version does not actively collect personal information from children or other users through our servers.</p>

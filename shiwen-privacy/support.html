@@ -183,11 +183,11 @@
 
   <main>
     <section class="hero" aria-labelledby="page-title">
-      <div class="eyebrow">iOS App · Support</div>
+      <div class="eyebrow">iPhone · iPad · Mac · Support</div>
       <h1 id="page-title">支持</h1>
       <p class="lead">拾纹是一款从日常影像中发现纹样灵感的创作工具。</p>
       <p class="lead">一张照片、一扇窗、一块布料，甚至一幅随手涂鸦，都可以成为图案创作的起点。拾纹帮助你将熟悉的素材转化为独特的纹样、图案，在变化与秩序之间探索新的视觉可能。</p>
-      <p class="note">适用版本 / Applies to: Shiwen iOS 2.0</p>
+      <p class="note">适用版本 / Applies to: 拾纹 2.1.0</p>
       <a class="contact" href="mailto:yousabrina@me.com">联系支持 · yousabrina@me.com</a>
     </section>
 
@@ -200,17 +200,18 @@
         <tbody>
           <tr><td>照片选择器</td><td>当你主动选择来源图片时使用。拾纹只接收你选中的图片，用于生成纹样。</td></tr>
           <tr><td>相机</td><td>当你点击拍照时请求，用于拍摄纹样来源图。拾纹不会在后台调用相机。</td></tr>
-          <tr><td>添加到照片</td><td>当你点击下载或保存到相册时请求，用于将生成的图片写入系统照片图库。</td></tr>
+          <tr><td>添加到照片</td><td>在 iPhone / iPad 上点击下载或保存到相册时请求，用于将生成的图片写入系统照片图库。</td></tr>
+          <tr><td>文件保存（Mac）</td><td>在 Mac 上把成品写到你选择的位置，不经过系统照片图库。</td></tr>
           <tr><td>系统分享</td><td>当你点击分享时打开。作品只会发送到你选择的 App、联系人或服务。</td></tr>
         </tbody>
       </table>
-      <p class="note">你可以在 iOS“设置”中查看或撤销这些权限。撤销权限只会影响对应功能。</p>
+      <p class="note">你可以在系统设置中查看或撤销这些权限。撤销权限只会影响对应功能。</p>
 
       <h3>数据存储说明</h3>
       <ul>
         <li>当前版本无需注册或登录。</li>
-        <li>你选择的图片、生成的纹样和画廊项目默认保存在设备本地，不会上传到拾纹服务器。风格处理、AI 高清和高清导出也在设备上完成。</li>
-        <li>内购由 Apple 处理，Pro 权益通过 RevenueCat 校验；匿名产品分析使用 PostHog。这些服务不会收到你的来源图或纹样。</li>
+        <li>你选择的图片、抠图结果、生成的纹样和画廊项目默认保存在设备本地，不会上传到拾纹服务器。风格处理、抠图、AI 高清和高清导出也在设备上完成。</li>
+        <li>内购由 Apple StoreKit 处理；匿名产品分析使用 PostHog。这些服务不会收到你的来源图或纹样。2.1.0 已不再使用 RevenueCat。</li>
         <li>本地项目会保留到你在画廊中删除，或卸载 App。</li>
         <li>保存到系统照片图库或分享给其他服务的副本，需要在对应位置单独删除。</li>
         <li>如果设备启用了系统备份，Apple 可能依据你的 iCloud 和设备备份设置备份 App 数据。</li>
@@ -234,17 +235,18 @@
         <tbody>
           <tr><td>Photo picker</td><td>Used when you choose a source image. Shiwen receives only the images you select and uses them to create patterns.</td></tr>
           <tr><td>Camera</td><td>Requested when you choose to take a source photo. Shiwen does not access the camera in the background.</td></tr>
-          <tr><td>Add to Photos</td><td>Requested when you download or save a creation to the system photo library.</td></tr>
+          <tr><td>Add to Photos</td><td>On iPhone and iPad, requested when you download or save a creation to Photos.</td></tr>
+          <tr><td>File save (Mac)</td><td>On Mac, finished images are written to a location you choose instead of the Photos library.</td></tr>
           <tr><td>System share sheet</td><td>Opened when you choose Share. Your work is sent only to the app, person, or service you select.</td></tr>
         </tbody>
       </table>
-      <p class="note">You can review or revoke these permissions in iOS Settings. Revoking a permission affects only the related feature.</p>
+      <p class="note">You can review or revoke these permissions in system Settings. Revoking a permission affects only the related feature.</p>
 
       <h3>Data storage</h3>
       <ul>
         <li>The current version does not require an account or sign-in.</li>
-        <li>Selected images, generated patterns, and Gallery projects are stored locally on your device by default and are not uploaded to Shiwen servers. Style processing, AI HD, and HD export also run on-device.</li>
-        <li>In-app purchases are processed by Apple. Pro entitlements are checked with RevenueCat. Anonymous product analytics use PostHog. These services do not receive your source images or patterns.</li>
+        <li>Selected images, cutouts, generated patterns, and Gallery projects are stored locally on your device by default and are not uploaded to Shiwen servers. Style processing, cutout, AI HD, and HD export also run on-device.</li>
+        <li>In-app purchases are processed by Apple StoreKit. Anonymous product analytics use PostHog. These services do not receive your source images or patterns. Version 2.1.0 no longer uses RevenueCat.</li>
         <li>Local projects remain until you delete them in Gallery or uninstall the app.</li>
         <li>Copies saved to Photos or shared with another service must be deleted separately from those destinations.</li>
         <li>If system backup is enabled, Apple may back up app data according to your iCloud and device backup settings.</li>
