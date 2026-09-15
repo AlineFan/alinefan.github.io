@@ -190,7 +190,7 @@
       <h1 id="page-title">支持</h1>
       <p class="lead">拾纹是一款从日常影像中发现纹样灵感的创作工具。</p>
       <p class="lead">一张照片、一扇窗、一块布料，甚至一幅随手涂鸦，都可以成为图案创作的起点。拾纹帮助你将熟悉的素材转化为独特的纹样、图案，在变化与秩序之间探索新的视觉可能。</p>
-      <p class="note">适用版本 / Applies to: 拾纹 2.2.0</p>
+      <p class="note">适用版本 / Applies to: 拾纹 2.3.0</p>
       <a class="contact" href="mailto:yousabrina@me.com">联系支持 · yousabrina@me.com</a>
     </section>
 
@@ -210,12 +210,21 @@
       </table>
       <p class="note">你可以在系统设置中查看或撤销这些权限。撤销权限只会影响对应功能。</p>
 
+      <h3>2.3.0 印刷导出与水印</h3>
+      <ul>
+        <li>下载页可导出<strong>单位图块</strong>或<strong>整图</strong>。曼陀罗、螺旋是构图，只有整图，没有单位图块。</li>
+        <li>默认 DPI 为 300，并写入导出的 PNG 文件头。单位图块、自定义和社交媒体尺寸里，改 DPI 只改物理尺寸和文件头，不改像素；纸张（A3 / A4 等）保持印刷物理尺寸，改 DPI 会改像素。</li>
+        <li>非会员：取样输出最高 2048 px；单位图块和整图不能改宽高与 DPI；整图只能在 3:4 / 9:16 / 16:9 / 4:3 之间切换。Pro 可将取样输出调到 5000 px，并选择纸张、社交媒体其余预设或自定义尺寸。</li>
+        <li>编辑器预览仍是拖动 384 px、松手 1024 px；下载按你选的像素重新渲染，不是把预览图放大。</li>
+        <li>个人中心可填写最多 20 个字符的水印签名。下载页水印开关默认关闭；打开后只在本机盖到当前预览和导出图上。</li>
+      </ul>
+
       <h3>数据存储说明</h3>
       <ul>
         <li>当前版本无需注册或登录。</li>
-        <li>你选择的图片、抠图结果、生成的纹样和画廊项目默认保存在设备本地，不会上传到拾纹服务器。风格处理、抠图、AI 高清和高清导出也在设备上完成。</li>
+        <li>你选择的图片、抠图结果、生成的纹样、画廊项目和水印签名默认保存在设备本地，不会上传到拾纹服务器。风格处理、抠图、AI 高清、印刷尺寸换算和高清导出也在设备上完成。</li>
         <li>内购由 Apple StoreKit 处理；匿名产品分析使用 PostHog。这些服务不会收到你的来源图或纹样。</li>
-        <li>本地项目会保留到你在画廊中删除，或卸载 App。</li>
+        <li>本地项目会保留到你在画廊中删除，或卸载 App。水印签名会保留到你在个人中心改掉或清空，或卸载 App。</li>
         <li>已保存到系统照片、Mac 文件或其他服务的副本，需要在相应位置单独删除。</li>
         <li>如果设备启用了系统备份，Apple 可能依据你的 iCloud 和设备备份设置备份 App 数据。</li>
       </ul>
@@ -245,12 +254,21 @@
       </table>
       <p class="note">You can review or revoke these permissions in system Settings. Revoking a permission affects only the related feature.</p>
 
+      <h3>2.3.0 print export and watermark</h3>
+      <ul>
+        <li>The download page can export a <strong>unit tile</strong> or a <strong>full image</strong>. Mandala and Spiral are compositions: full image only, no unit tile.</li>
+        <li>Default DPI is 300 and is written into the exported PNG. For unit tiles, custom sizes, and social presets, changing DPI changes physical size and the file header, not pixels. Paper sizes (A3 / A4 and similar) keep their print dimensions; changing DPI changes pixels.</li>
+        <li>Without Pro: sampling output tops out at 2048 px; unit-tile and full-image width, height, and DPI cannot be changed; full image can only switch among 3:4 / 9:16 / 16:9 / 4:3. Pro can raise sampling output to 5000 px and choose paper, the remaining social presets, or a custom size.</li>
+        <li>Editor preview still uses 384 px while dragging and 1024 px when settled. Downloads re-render at the pixels you chose; they are not an upscale of the preview.</li>
+        <li>Profile can store a watermark signature of at most 20 characters. The download-page watermark switch is off by default. When on, the stamp is applied on-device to the current preview and export only.</li>
+      </ul>
+
       <h3>Data storage</h3>
       <ul>
         <li>The current version does not require an account or sign-in.</li>
-        <li>Selected images, cutouts, generated patterns, and Gallery projects are stored locally on your device by default and are not uploaded to Shiwen servers. Style processing, cutout, AI HD, and HD export also run on-device.</li>
+        <li>Selected images, cutouts, generated patterns, Gallery projects, and the watermark signature are stored locally on your device by default and are not uploaded to Shiwen servers. Style processing, cutout, AI HD, print-size calculation, and HD export also run on-device.</li>
         <li>In-app purchases are processed by Apple StoreKit. Anonymous product analytics use PostHog. These services do not receive your source images or patterns.</li>
-        <li>Local projects remain until you delete them in Gallery or uninstall the app.</li>
+        <li>Local projects remain until you delete them in Gallery or uninstall the app. The watermark signature remains until you change or clear it in Profile, or uninstall the app.</li>
         <li>Copies saved to Photos, a Mac file, or another service must be deleted separately from those destinations.</li>
         <li>If system backup is enabled, Apple may back up app data according to your iCloud and device backup settings.</li>
       </ul>
